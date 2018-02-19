@@ -13,8 +13,8 @@ from time import time
 
 class CsvPipeline(object):
     def __init__(self):
-        ts = time()
-        self.file = open("conversations_%s.csv" % ts, 'wb')
+        ts = int(time())
+        self.file = open("tinder%s.csv" % ts, 'wb')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
  
