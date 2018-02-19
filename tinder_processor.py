@@ -77,7 +77,12 @@ class TinderProcessor:
         output_file = None
         if '_' in self.tinder_file:
             # ex: tinder_1519057231.csv -> 1519057231
-            ts = self.tinder_file.split('_')[1].split('.')[0]
+            ts = ""
+            try:
+                ts = self.tinder_file.split('_')[1].split('.')[0]
+            except Exception as e:
+                print(e)
+
             output_file = './conversations_%s.csv' % ts
         else:
             output_file = './conversations.csv'
