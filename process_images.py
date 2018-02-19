@@ -35,8 +35,8 @@ def get_image(image_url):
 
 def process_image_url(url):
     image = get_image(url)
-    width = image.size[0]
-    height = image.size[1]
+    # width = image.size[0]
+    # height = image.size[1]
     return parse_text_from_image(image)
 
 def process_texts(texts):

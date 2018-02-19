@@ -1,2 +1,6 @@
 images/
 .ipynb_checkpoints/
+*.csv
+tinderspider/__pycache__
+tinderspider/__pycache__/
+tinderspider/spiders/__pycache__/

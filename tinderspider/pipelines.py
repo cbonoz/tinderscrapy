@@ -5,6 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from scrapy.exporters import CsvItemExporter
+from time import time
 
 # class CoinspiderPipeline(object):
 #     def process_item(self, item, spider):
@@ -12,7 +13,8 @@ from scrapy.exporters import CsvItemExporter
 
 class CsvPipeline(object):
     def __init__(self):
-        self.file = open("currencies.csv", 'wb')
+        ts = time()
+        self.file = open("conversations_%s.csv" % ts, 'wb')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
  
